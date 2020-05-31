@@ -5,7 +5,8 @@ module CMG
   # Class that will be used to create new instances of players
   class Player
     include ::ActiveModel::Validations
-    attr_reader :name, :points
+    attr_reader :name
+    attr_accessor :points
 
     validates :name, presence: true
 

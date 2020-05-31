@@ -23,5 +23,8 @@ describe "CMG::Player" do
       assert @player_1.points.has_value?(0)
     end
 
+    it "must ensure points are a hash" do
+      assert_kind_of Hash, @player_1.points
+    end
   end
 end
