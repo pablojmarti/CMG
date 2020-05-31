@@ -1,6 +1,8 @@
 require "CMG/version"
 
+# All Code in the gem is namespaced under this Module.
 module CMG
-  class Error < StandardError; end
-  # Your code goes here...
+
+  # the URL for basic testing purposes
+  Url = "http://howistart.org/posts/ruby/1"
 end
