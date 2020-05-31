@@ -11,3 +11,4 @@ gem "minitest", "~> 5.14"
 gem "rdoc", "~> 6.2"
 
 gem "irb", "~> 1.2"
+gem "activemodel"
