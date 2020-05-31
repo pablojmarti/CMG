@@ -1,9 +1,9 @@
 require 'test_helper'
 
-describe "Player" do
+describe "CMG::Player" do
   it "has player name" do
     name = "John Doe"
     CMG::Player.new(name)
-    CMG::Player.name.must_equal name
+    _(CMG::Player.name).must_equal name
   end
 end
