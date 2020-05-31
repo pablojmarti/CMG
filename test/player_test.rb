@@ -20,7 +20,7 @@ describe "CMG::Player" do
     end
 
     it "must initialize points to zero" do
-      #
+      assert @player_1.points.has_value?(0)
     end
 
   end

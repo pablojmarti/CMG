@@ -11,6 +11,10 @@ module CMG
 
     def initialize(name)
       @name = name
+      @points = { power: 0,
+                  research: 0,
+                  faith: 0
+                }
     end
   end
 end
