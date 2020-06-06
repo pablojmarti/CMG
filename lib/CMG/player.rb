@@ -16,12 +16,16 @@ module CMG
                   research: 0,
                   faith: 0
                 }
-      @resources = {  iron: 0,
-                      wood: 0,
-                      food: 0,
-                      water: 0,
-                      clay: 0
+      @resources = {  iron: generateResources,
+                      wood: generateResources,
+                      food: generateResources,
+                      water: generateResources,
+                      clay: generateResources
                   }
+    end
+
+    def generateResources
+      return rand(0..4)
     end
   end
 end
