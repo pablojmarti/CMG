@@ -2,6 +2,8 @@ require 'test_helper'
 
 describe "CMG::Player" do
   before do
+    # seed random to generate same random set of resources each time
+    srand(1234)
     name = "John Doe"
     @player_1 = CMG::Player.new(name)
   end
@@ -29,6 +31,15 @@ describe "CMG::Player" do
 
     it "must have resources" do
       assert @player_1.resources.present?
+    end
+
+    it "must generate random resources for the player" do
+      resources = { :iron=>3, :wood=>4, :food=>4, :water=>0, :clay=>1 }
+      assert_equal resources, @player_1.resources
+    end
+
+    it "must generate two different random resources on each initialization" do
+      refute_equal @player_1.resources, CMG::Player.new("Jane Doe").resources
     end
   end
 end
