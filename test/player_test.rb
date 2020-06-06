@@ -42,4 +42,13 @@ describe "CMG::Player" do
       refute_equal @player_1.resources, CMG::Player.new("Jane Doe").resources
     end
   end
+
+  describe "When a player triggers a resource gathering event" do
+
+    it "must increase the players resources by the value recieved" do
+      resource = :clay
+      @player_1.update_resources(resource, 5)
+      assert_equal 6, @player_1.resources[resource]
+    end
+  end
 end
