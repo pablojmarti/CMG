@@ -6,6 +6,7 @@ describe "CMG::Player" do
     srand(1234)
     name = "John Doe"
     @player_1 = CMG::Player.new(name)
+    @resource = :clay
   end
 
   describe "When a player gets created" do
@@ -46,9 +47,26 @@ describe "CMG::Player" do
   describe "When a player triggers a resource gathering event" do
 
     it "must increase the players resources by the value recieved" do
-      resource = :clay
-      @player_1.update_resources(resource, 5)
-      assert_equal 6, @player_1.resources[resource]
+      @player_1.update_resources(@resource, 5)
+      assert_equal 6, @player_1.resources[@resource]
+    end
+
+    it "must not increase the players resources above 99" do
+      @player_1.update_resources(@resource, 99)
+      assert @player_1.resources[@resource] <= 99
+    end
+  end
+
+  describe "When a player triggers a resource expenditure event" do
+
+    it "must descrease the players resources by the value given" do
+      @player_1.update_resources(@resource, -1)
+      assert_equal 0, @player_1.resources[@resource]
+    end
+
+    it "must not decrease below zero" do
+      @player_1.update_resources(@resource, -3)
+      assert @player_1.resources[@resource] >= 0
     end
   end
 end
