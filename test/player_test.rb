@@ -26,5 +26,9 @@ describe "CMG::Player" do
     it "must ensure points are a hash" do
       assert_kind_of Hash, @player_1.points
     end
+
+    it "must have resources" do
+      assert @player_1.resources.present?
+    end
   end
 end
