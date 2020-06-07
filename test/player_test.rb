@@ -69,4 +69,13 @@ describe "CMG::Player" do
       assert @player_1.resources[@resource] >= 0
     end
   end
+
+  describe "When a player scores a point" do
+
+    it "must increase the respective point by 1" do
+      init_value = @player_1.points[:power]
+      @player_1.points[:power] += 1
+      assert_equal @player_1.points[:power], init_value + 1
+    end
+  end
 end
