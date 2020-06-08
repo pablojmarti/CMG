@@ -11,7 +11,7 @@ describe "CMG::Game" do
     end
 
     it "must not be created without a player" do
-      assert CMG::Game.new(nil).player.invalid?
+      assert CMG::Game.new(nil).invalid?
     end
 
     it "must create a turn counter set to 0" do

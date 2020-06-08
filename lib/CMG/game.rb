@@ -7,8 +7,7 @@ module CMG
     attr_reader :player
     attr_accessor :turns
 
-    validate :player, :presence,
-      unless: -> { player.invalid? }
+    validate :player, presence: true
     validates :turns, presence: true
 
     def initialize(name)
